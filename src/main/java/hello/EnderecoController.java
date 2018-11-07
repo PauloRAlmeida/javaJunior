@@ -47,7 +47,7 @@ public class EnderecoController {
 		
     }
 	
-	//Requisição para retornar cep de acordo com Cep passado como variavel
+	//Requisição para deletar um endereço de acordo com Cep passado como variavel
 	@RequestMapping(value= "/endereco{cep}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE, consumes ="application/json")
     public ResponseEntity<?> removeEndereco(@PathVariable("cep") int cep) {
 		if (enderecoService.removeEndereco(cep)) return new ResponseEntity<Endereco>(HttpStatus.NO_CONTENT);

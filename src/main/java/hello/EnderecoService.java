@@ -19,7 +19,6 @@ public class EnderecoService {
 	}
 	
 	//Metodo para salvar o endereço na Lista de endereços
-	
 	public void save(Endereco endereco) throws Exception {
 		//Laço para a checagem se exste algum atributos null
 		for (Field f : endereco.getClass().getDeclaredFields()) {

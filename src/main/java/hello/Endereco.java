@@ -1,5 +1,6 @@
 package hello;
 
+//Criação de classe Endereço com atributos exigidos
 public class Endereco {
 	
 	public Endereco(String endereco, String bairro, String cidade, String estado, String pais, int cep) {
