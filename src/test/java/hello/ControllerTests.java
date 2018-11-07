@@ -4,7 +4,6 @@ package hello;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -16,8 +15,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -68,7 +65,6 @@ public class ControllerTests {
     //Teste de integração para requisição de deletar endereço
     @Test
     public void deletaEnderecoTeste() throws Exception {
-    	Endereco c = new Endereco("av. Paulista", "Centro", "São Paulo", "SP", "Brasil", 1234);
     	end.save(new Endereco("av. Paulista", "Centro", "São Paulo", "SP", "Brasil", 1234));
     	this.mockMvc.perform(delete("/endereco{cep}",1234)
     			.contentType(MediaType.APPLICATION_JSON))
